@@ -13,7 +13,7 @@ para o contrário.
 
 isTruthy = function(arg){
     return !!arg
-}
+};
 
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -38,7 +38,7 @@ console.log(isTruthy(-1));
 console.log(isTruthy(12));
 console.log(isTruthy(function(){}));
 console.log(isTruthy("Fazendo um teste"));
-console.log(isTruthy(20*30));
+console.log(isTruthy(20*10));
 
 
 /*
@@ -60,7 +60,7 @@ let carro = {
     placa: "VSF-10100",
     ano: 2020,
     cor: "Prata",
-    quantasPortas: 2,
+    quantasPortas: 4,
     assentos : 5,
     quantidaPessoas:0
 }
@@ -79,7 +79,7 @@ Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 
 carro.obterCor = function(){
-    return `A cor do carro é ${pessoa.cor}`
+    return `A cor do carro é ${carro.cor}`
 }
 
 /*
@@ -87,7 +87,7 @@ Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 
 carro.obterModelo = function(){
-    return `O modelo é ${pessoa.modelo}`
+    return `O modelo é ${carro.modelo}`
 }
 
 /*
@@ -95,7 +95,7 @@ Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 
 carro.obterMarca = function(){
-    return `A marca é ${pessoa.marca}`
+    return `A marca é ${carro.marca}`
 }
 
 /*
@@ -115,6 +115,7 @@ seguintes características:
 - Ele deverá receber por parâmetro o número de pessoas entrarão no carro. Esse
 número não precisa encher o carro, você poderá acrescentar as pessoas aos
 poucos.
+
 - O método deve retornar a frase: "Já temos [X] pessoas no carro!"
 - Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
 deve retornar a frase: "O carro já está lotado!"
@@ -137,22 +138,25 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-
+console.log(carro.obterCor());
 
 // Mude a cor do carro para vermelho.
 
+carro.mudarCor("Vermelho");
+
+
 
 // E agora, qual a cor do carro?
-
+console.log(carro.obterCor());
 
 // Mude a cor do carro para verde musgo.
 
-
+carro.mudarCor("Verde Musgo");
 // E agora, qual a cor do carro?
-
+console.log(carro.obterCor());
 
 // Qual a marca e modelo do carro?
-
+console.log(carro.obterMarcaModelo())
 
 // Adicione 2 pessoas no carro.
 
