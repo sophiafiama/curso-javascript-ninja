@@ -11,7 +11,7 @@ para o contrário.
 //     return !!arg; 
 // }
 
-isTruthy = function(arg){
+isTruthy = function (arg) {
     return !!arg
 };
 
@@ -36,9 +36,9 @@ console.log(isTruthy({}));
 console.log(isTruthy([]));
 console.log(isTruthy(-1));
 console.log(isTruthy(12));
-console.log(isTruthy(function(){}));
+console.log(isTruthy(function () { }));
 console.log(isTruthy("Fazendo um teste"));
-console.log(isTruthy(20*10));
+console.log(isTruthy(20 * 10));
 
 
 /*
@@ -55,14 +55,14 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 */
 
 let carro = {
-    marca:"Ferrari",
-    modelo:"Portofino",
+    marca: "Ferrari",
+    modelo: "Portofino",
     placa: "VSF-10100",
     ano: 2020,
     cor: "Prata",
     quantasPortas: 4,
-    assentos : 5,
-    quantidaPessoas:0
+    assentos: 5,
+    quantidadePessoas: 0
 }
 
 /*
@@ -70,15 +70,15 @@ Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
 
-carro.mudarCor = function(arg){
-    return carro.cor= arg;
+carro.mudarCor = function (arg) {
+    return carro.cor = arg;
 }
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 
-carro.obterCor = function(){
+carro.obterCor = function () {
     return `A cor do carro é ${carro.cor}`
 }
 
@@ -86,7 +86,7 @@ carro.obterCor = function(){
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 
-carro.obterModelo = function(){
+carro.obterModelo = function () {
     return `O modelo é ${carro.modelo}`
 }
 
@@ -94,7 +94,7 @@ carro.obterModelo = function(){
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 
-carro.obterMarca = function(){
+carro.obterMarca = function () {
     return `A marca é ${carro.marca}`
 }
 
@@ -104,7 +104,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 
-carro.obterMarcaModelo = function(){
+carro.obterMarcaModelo = function () {
     return `Esse carro é um ${carro.marca} ${carro.modelo}`
 }
 
@@ -126,9 +126,28 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
+carro.adicionarPessoas = function (numeroPessoas) {
+    let totalPessoas = carro.quantidadePessoas + numeroPessoas;
+    
+    if (carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
+        return 'O carro já está lotado';
+    }
 
+    else if (totalPessoas > carro.assentos) {
+        var restante = carro.assentos - carro.quantidadePessoas;
+        var plural = restante ===1 ? 'pessoa' : 'pessoas';
+        return `Lugar para: ${restante} ${plural}`;
+    }
 
+    carro.quantidadePessoas += numeroPessoas
+    return `Já temos ${carro.quantidadePessoas} pessoas no carro`;
+}
 
+// console.log(carro.adicionarPessoas(4))
+// console.log(carro.adicionarPessoas(6))
+// console.log(carro.adicionarPessoas(3))
+// console.log(carro.adicionarPessoas(1))
+// console.log(carro.adicionarPessoas(-4))
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -160,18 +179,23 @@ console.log(carro.obterMarcaModelo())
 
 // Adicione 2 pessoas no carro.
 
+console.log(carro.adicionarPessoas(2))
+
+
+
 
 // Adicione mais 4 pessoas no carro.
 
+console.log(carro.adicionarPessoas(4))
 
 // Faça o carro encher.
-
+console.log(carro.adicionarPessoas(3))
 
 // Tire 4 pessoas do carro.
-
+console.log(carro.adicionarPessoas(-4))
 
 // Adicione 10 pessoas no carro.
-
+console.log(carro.adicionarPessoas(10))
 
 // Quantas pessoas temos no carro?
-
+console.log(carro.quantidadePessoas)
