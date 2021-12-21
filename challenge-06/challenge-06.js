@@ -6,6 +6,9 @@ e imprima o nome desse campeonato no console.
 */
 // ?
 
+let championship = "Campeonato Da Varzea"
+console.log(championship)
+
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
 Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
@@ -13,7 +16,7 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 // ?
-
+let teams = ["Perna de pau", "Perdidos na Varze", "Amigos do Zé", "Inimigos da Bola", "Ruins d+"]
 console.log( 'Times que estão participando do campeonato:', teams );
 
 /*
