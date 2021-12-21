@@ -17,7 +17,7 @@ desafio.
 */
 // ?
 let teams = ["Perna de pau", "Perdidos na Varze", "Amigos do Zé", "Inimigos da Bola", "Ruins d+"]
-console.log( 'Times que estão participando do campeonato:', teams );
+console.log('Times que estão participando do campeonato:', teams);
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
@@ -35,19 +35,30 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
+
+function showTeamPosition(numPosition) {
+    return numPosition < 5 ?
+        `O time que está em ${numPosition}º lugar é o ${teams[--numPosition]}.` :
+        `Não temos a informação do time que está nessa posição.`
+}
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+console.log(showTeamPosition(1));
+console.log(showTeamPosition(2));
+console.log(showTeamPosition(3));
+console.log(showTeamPosition(10));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
+let contador = 20
+while (contador <= 30) {
+    console.log(contador++);
+}
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -61,9 +72,57 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+// function convertToHex(color) {
+//     switch(color) {
+//         case 'vermelho':
+//             return `O hexadecimal para a cor ${color} é #FF0000`;
+//         case 'azul':
+//             return `O hexadecimal para a cor ${color} é #FF0002`;
+//         case 'verde':
+//             return `O hexadecimal para a cor ${color} é #FF0003`;
+//         case 'preto':
+//             return `O hexadecimal para a cor ${color} é #FF0004`;
+//         case 'branco':
+//             return `O hexadecimal para a cor ${color} é #FF0005`;
+//         default:
+//             return `Não temos o equivalente hexadecimal para ${color}`
+
+//     }
+// }
+
+function convertToHex(color) {
+    let hexaDecimal; 
+    switch(color) {
+        case 'vermelho':
+            hexaDecimal = '#FF0000';
+            break
+        case 'azul':
+            hexaDecimal = '#0000FF';
+            break
+        case 'verde':
+            hexaDecimal =  '#008000';
+            break
+        case 'preto':
+            hexaDecimal = '#000000';
+            break
+        case 'branco':
+            hexaDecimal = 'FFFFFF';
+            break
+        default:
+            return `Não temos o equivalente hexadecimal para ${color}`
+
+    }
+    return `O hexadecimal para a cor ${color} é ${hexaDecimal}!`
+}
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+
+console.log(convertToHex('vermelho'));
+console.log(convertToHex('azul'));
+console.log(convertToHex('verde'));
+console.log(convertToHex('amarelo'));
+console.log(convertToHex('branco'));
+console.log(convertToHex('preto'));
+console.log(convertToHex('teal'));
