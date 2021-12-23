@@ -3,7 +3,9 @@ Declare uma variável chamada `sum` e atribua a ela uma função chamada
 `calculateSum`. A função deve receber dois parâmetros e retornar a soma
 desses parâmetros.
 */
-// ?
+let sum = function calculateSum(x,y){
+  return x+y
+}
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
@@ -11,23 +13,32 @@ o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
 // ?
+let valor1= 2
+let valor2= 25
+console.log(`A soma de ${valor1} e ${valor2} é igual a ${sum(valor1,valor2)}.`)
+
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
 // ?
+console.log(sum.name)
 
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
-// ?
+function showName(){
+  return "Sophia Fiama";
+}
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
 // ?
+
+let varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
@@ -35,6 +46,8 @@ atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
 // ?
+console.log(`A função ${showName.name} retorna ${showName()}.`)
+
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -50,16 +63,48 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 // ?
 
+function calculator(operador){
+    return function(num1, num2){
+      let resultado; 
+      switch(operador){
+        case '+':
+          resultado = num1+num2;
+          break
+        case '-':
+          resultado = num1-num2; 
+          break
+        case '*':
+          resultado = num1*num2; 
+          break
+        case '/':
+          resultado = num1/num2;
+          break
+        case '%':
+          resultado = num1%num2;
+          break
+          default:
+            return'Operação inválida'
+          
+      }
+      return `Resultado da operação: ${num1} ${operador} ${num2}= ${resultado}.`
+    };
+}
+
+
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
 */
 // ?
 
+let  soma = calculator('+');
+
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
 // ?
+
+console.log(soma(10,46))
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
