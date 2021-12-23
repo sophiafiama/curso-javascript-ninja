@@ -112,9 +112,15 @@ Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 correto por parâmetro para cada uma delas.
 */
 // ?
-
+let subtraction = calculator('-'); 
+let multiplication = calculator('*');
+let division = calculator('/')
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
 // ?
+
+console.log(subtraction(10,46));
+console.log(division(10,46));
+console.log(multiplication(10,46));
